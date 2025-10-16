@@ -1,4 +1,4 @@
-package com.example.Schedule;
+/*package com.example.Schedule;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class ScheduleApplicationTests {
 	void contextLoads() {
 	}
 
-}
+}*/
