@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import com.example.Schedule.model.enums.*;
 
 // User.java
 @Entity
@@ -19,13 +20,13 @@ public class User {
     @Column(name = "first_name", nullable = false) private String firstName;
     @Column(name = "last_name", nullable = false) private String lastName;
     @Column(name = "middle_name") private String middleName;
-    @Enumerated(EnumType.STRING) private main.java.com.example.Schedule.model.enums.UserRole role;
+    @Enumerated(EnumType.STRING) private UserRole role;
     @Column(name = "is_active") private Boolean isActive = true;
     @Column(name = "created_at") private LocalDateTime createdAt;
     @Column(name = "updated_at") private LocalDateTime updatedAt;
     @ManyToOne
     @JoinColumn(name = "university_id", insertable = false, updatable = false)
-    private main.java.com.example.Schedule.model.University university;
+    private University university;
     @OneToOne(mappedBy = "user") private Teacher teacher;
     @OneToOne(mappedBy = "user") private Student student;
     @OneToMany(mappedBy = "user") private List<Note> notes = new ArrayList<>();

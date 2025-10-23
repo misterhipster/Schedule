@@ -20,7 +20,7 @@ public class Faculty {
     @Column(name = "created_at") private LocalDateTime createdAt;
     @ManyToOne
     @JoinColumn(name = "university_id", insertable = false, updatable = false)
-    private main.java.com.example.Schedule.model.University university;
+    private University university;
     @OneToMany(mappedBy = "faculty") private List<StudentGroup> studentGroups = new ArrayList<>();
     @OneToMany(mappedBy = "faculty") private List<Subject> subjects = new ArrayList<>();
     @OneToMany(mappedBy = "faculty") private List<Teacher> teachers = new ArrayList<>();

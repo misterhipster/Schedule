@@ -3,6 +3,7 @@ package com.example.Schedule.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import com.example.Schedule.model.enums.*;
 
 // Note.java
 @Entity
@@ -14,8 +15,8 @@ public class Note {
     @Column(name = "user_id") private Integer userId;
     private String title;
     @Column(nullable = false) private String content;
-    @Enumerated(EnumType.STRING) private main.java.com.example.Schedule.model.enums.Priority priority = main.java.com.example.Schedule.model.enums.Priority.MEDIUM;
-    @Enumerated(EnumType.STRING) @Column(name = "scope_type") private main.java.com.example.Schedule.model.enums.NoteScope scopeType;
+    @Enumerated(EnumType.STRING) private Priority priority = Priority.MEDIUM;
+    @Enumerated(EnumType.STRING) @Column(name = "scope_type") private NoteScope scopeType;
     @Column(name = "schedule_id") private Integer scheduleId;
     @Column(name = "subject_id") private Integer subjectId;
     @Column(name = "target_group_id") private Integer targetGroupId;

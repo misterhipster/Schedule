@@ -19,7 +19,7 @@ public class Building {
     @Column(name = "created_at") private LocalDateTime createdAt;
     @ManyToOne
     @JoinColumn(name = "university_id", insertable = false, updatable = false)
-    private main.java.com.example.Schedule.model.University university;
+    private University university;
     @OneToMany(mappedBy = "building") private List<Classroom> classrooms = new ArrayList<>();
     @PrePersist protected void onCreate() { createdAt = LocalDateTime.now(); }
     public Building() {}

@@ -1,4 +1,4 @@
-package main.java.com.example.Schedule.model;
+package com.example.Schedule.model;
 
 import com.example.Schedule.model.*;
 import jakarta.persistence.*;

@@ -3,6 +3,7 @@ package com.example.Schedule.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import com.example.Schedule.model.enums.*;
 
 // ScheduleOverride.java
 @Entity
@@ -13,12 +14,12 @@ public class ScheduleOverride {
     private Integer id;
     @Column(name = "schedule_id") private Integer scheduleId;
     @Column(name = "week_numbers") private String weekNumbers;
-    @Enumerated(EnumType.STRING) @Column(name = "change_type") private main.java.com.example.Schedule.model.enums.OverrideType changeType;
+    @Enumerated(EnumType.STRING) @Column(name = "change_type") private OverrideType changeType;
     @Column(name = "new_subject_id") private Integer newSubjectId;
     @Column(name = "new_teacher_id") private Integer newTeacherId;
     @Column(name = "new_classroom_id") private Integer newClassroomId;
     @Column(name = "new_time_slot_id") private Integer newTimeSlotId;
-    @Enumerated(EnumType.STRING) @Column(name = "new_lesson_type") private main.java.com.example.Schedule.model.enums.LessonType newLessonType;
+    @Enumerated(EnumType.STRING) @Column(name = "new_lesson_type") private LessonType newLessonType;
     @Column(name = "new_day_of_week") private Integer newDayOfWeek;
     private String reason;
     @Column(name = "created_at") private LocalDateTime createdAt;

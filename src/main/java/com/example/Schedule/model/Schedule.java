@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import com.example.Schedule.model.enums.*;
 
 // Schedule.java
 @Entity
@@ -18,8 +19,8 @@ public class Schedule {
     @Column(name = "classroom_id") private Integer classroomId;
     @Column(name = "time_slot_id") private Integer timeSlotId;
     @Column(name = "day_of_week") private Integer dayOfWeek;
-    @Enumerated(EnumType.STRING) @Column(name = "lesson_type") private main.java.com.example.Schedule.model.enums.LessonType lessonType;
-    @Enumerated(EnumType.STRING) @Column(name = "week_type") private main.java.com.example.Schedule.model.enums.WeekType weekType = main.java.com.example.Schedule.model.enums.WeekType.ALL;
+    @Enumerated(EnumType.STRING) @Column(name = "lesson_type") private LessonType lessonType;
+    @Enumerated(EnumType.STRING) @Column(name = "week_type") private WeekType weekType =WeekType.ALL;
     @Column(name = "valid_weeks") private String validWeeks;
     @Column(name = "academic_year") private String academicYear;
     private Integer semester;

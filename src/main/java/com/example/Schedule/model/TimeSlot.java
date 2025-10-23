@@ -21,7 +21,7 @@ public class TimeSlot {
     @Column(name = "created_at") private LocalDateTime createdAt;
     @ManyToOne
     @JoinColumn(name = "university_id", insertable = false, updatable = false)
-    private main.java.com.example.Schedule.model.University university;
+    private University university;
     @OneToMany(mappedBy = "timeSlot") private List<Schedule> schedule = new ArrayList<>();
     @OneToMany(mappedBy = "newTimeSlot") private List<ScheduleOverride> scheduleOverrides = new ArrayList<>();
     @PrePersist protected void onCreate() { createdAt = LocalDateTime.now(); }
